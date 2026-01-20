@@ -17,8 +17,9 @@
         print($_SERVER['REMOTE_USER']);
 
         //phpinfo();
-         
+
     ?>
+    
 
 </body>
 </html>
