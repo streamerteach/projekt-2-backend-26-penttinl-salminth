@@ -19,7 +19,7 @@
         //phpinfo();
 
     ?>
-    
+    <h1> Testar att det fungerar </h1>
 
 </body>
 </html>
