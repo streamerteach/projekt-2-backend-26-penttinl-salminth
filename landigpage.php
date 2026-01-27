@@ -11,9 +11,7 @@
             <header>
                 <nav>
                     <ul>
-                        <a href="./home/"><li>Home</li></a>
                         <a href="./login/"><li>Login</li></a>
-                        <a href="./webbrapport.html"><li>Webbrapport</li></a>
                     </ul>
                 </nav>
             </header>
