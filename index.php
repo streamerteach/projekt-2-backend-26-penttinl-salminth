@@ -11,14 +11,13 @@
             <header>
                 <nav>
                     <ul>
-                        <a href=><li>Home</li></a>
-                        <a href=><li>Login</li></a>
-                        <a href=><li>Webbrapport</li></a>
+                        <a href="./home/"><li>Home</li></a>
+                        <a href="./login/"><li>Login</li></a>
+                        <a href="./webbrapport.html"><li>Webbrapport</li></a>
                     </ul>
                 </nav>
-            </headrer>
-            
-        
-        
+            </header>
+
+        </div>
     </body>
 </html>
