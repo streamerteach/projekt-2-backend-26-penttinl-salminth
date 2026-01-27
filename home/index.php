@@ -4,10 +4,10 @@
 
 <body>
     <div id="container"> <!--Max bredd 800px -->
-     <?php include "../nav.php"; ?>
+     <?php include "../essentials/nav.php"; ?>
     <section>
         <article>
-            <h2>Uppgift 2 kommer här</h2>
+            <h2>Homepage</h2>
             <p>Countdown till dejten</p>
         </article>
     </section>
