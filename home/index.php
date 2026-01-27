@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backend programmering</title>
-</head>
+<?php include "../essentials/handy_methods.php"; ?>
+<?php include "../essentials/header.php"; ?>
+
+
 <body>
-    <h1>Dating site</h1>
-
-    <?php
-        print(1 + 2);
-        print($_SERVER['SERVER_ADDR']);
-
-        print($_SERVER['SERVER_SOFTWARE']);
-
-        print($_SERVER['REMOTE_USER']);
-
-        //phpinfo();
-
-    ?>
-    <h1> Testar att det fungerar </h1>
-
+    <div id="container"> <!--Max bredd 800px -->
+     <?php include "../nav.php"; ?>
+    <section>
+        <article>
+            <h2>Uppgift 2 kommer här</h2>
+            <p>Countdown till dejten</p>
+        </article>
+    </section>
 </body>
 </html>
