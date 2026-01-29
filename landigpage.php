@@ -29,11 +29,11 @@ $firstVisit = $firstVisit ?? null;
             </header>
             <section>
                 <article>
-                    <h1>Welcome to the dating site!</h1>
+                    <h1>Welcome to the Date Bait!</h1>
                         <?php if ($returningUser && $firstVisit): ?>
                         <p>
                         Welcome back,
-                        <strong><?= htmlspecialchars($username) ?></strong><br>
+                        <strong><?= htmlspecialchars($username)?></strong><br>
                         Your first visit was on:
                         <?= date("d.m.Y, H:i", $firstVisit) ?>
                         </p>
@@ -52,7 +52,7 @@ $firstVisit = $firstVisit ?? null;
                         </p>
                 </article>
             </section>
-            <section>
+            <section id="cookies">
                 <p>We use cookies!</p>
                     <div id="cookie-buttons">
                         <!-- dehä funkar int ennu, säger att de e bara en länk fixas senare ork int nu mer -->
