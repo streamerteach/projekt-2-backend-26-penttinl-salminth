@@ -2,12 +2,12 @@
 <?php include "../essentials/header.php"; ?>
 <body>
 <div id="container"> <!--Max bredd 800px -->
-    <?php include "../nav.php"; ?>
+    <?php $navMode = "login"; ?>
+    <?php include "../essentials/nav.php"; ?>
     <section>
         <article>
             <h2>Min dejting sajt</h2>
             <p>Logga in eller registrera dig här</p>
-            <?php include "../uppg2.php"?>
         </article>
         <article>
             <h2>Registreringsformulär</h2>
@@ -18,7 +18,7 @@
             <input type="submit" value="Registrera dig">
         </form>
             <p>Har du redan ett konto?<a href="./index.php?form=login">Logga in här</a></p>
-            <?php include "../uppg4.php"?>
+            <?php include "../functions/loginformular.php"?>
         </article>
     </section>
 </body>

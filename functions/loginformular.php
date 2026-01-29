@@ -10,7 +10,7 @@ if (!empty($_REQUEST['username'])) {
         if($password == "1234") {
             print("password verified, welcome back".$username."<br>");
             $_SESSION['username'] = $username;
-            header("Refresh:3; url=../profile/");
+            header("Refresh:3; url=../home/index.php");
         }
     }
 }
