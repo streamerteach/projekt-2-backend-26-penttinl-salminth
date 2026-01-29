@@ -9,7 +9,13 @@
             <p>Du kan lägga upp en profilbild här</p>
         </article>
         <article>
+            <?php include "../functions/TimeAndDate/tiden.php"; ?>
         </article>
+    </section>
+
+    <section>
+    <!-- enter date and time for the date here -->
+     <!-- countdown timer comes here -->
     </section>
 </body>
 </html>

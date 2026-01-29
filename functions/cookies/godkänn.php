@@ -2,13 +2,13 @@
 
 // godkännande av cookies
 if (isset($_GET["accept"])) {
-    setcookie("accept_cookies", "accepted", time() + (86400 * 30), "/");
-    header("Location: landingpage.php");
+    setcookie("accept_cookies", "accept", time() + (86400 * 30), "/");
+    header("Location: ../../landingpage.php");
 }
 
-if (isset($_GET["vägra"])) {
+if (isset($_GET["decline"])) {
     setcookie("accept_cookies", "decline", time() + (86400 * 30), "/");
-       header("Location: landingpage.php");
+       header("Location: ../../landingpage.php");
 }
 
 
