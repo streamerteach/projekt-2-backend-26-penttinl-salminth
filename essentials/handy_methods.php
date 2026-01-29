@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 //starta session för varje användare
-//session_start(); 
+session_start(); 
 
 //Function för input sanitation
 function test_input($data)

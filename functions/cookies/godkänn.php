@@ -11,4 +11,10 @@ if (isset($_GET["vägra"])) {
        header("Location: landingpage.php");
 }
 
+
+/*borde de stå decline istället för vägra? och javet int om location far ti landingpage 
+när filen heter landigpage.php */
+//ja tänker int fixa så att de int fuckar up ng men chiiga sen ba du hinner
 ?>
+
+
