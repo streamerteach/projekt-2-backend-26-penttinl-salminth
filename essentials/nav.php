@@ -1,15 +1,16 @@
-   <header>
-        <div id="logo"> Healthy Dating </div>
-            <nav>
-                <ul>
-                <a href="../home/index.php"><li>Home</li></a>
-                <?php
-                    if (! empty($_SESSION['username'])) {
-                        print('<a href="../profile/index.php"><li>profile</li></a>');
-                    } else {
-                        print('<a href="../login/index.php"><li>login</li></a>');
-                    }
-                ?>
-                </ul>
-            </nav>
-    </header>
+<header>
+    <div id="logo">Date Bait</div>
+    <nav>
+        <ul class="navbar">
+            <li><a href="../home/index.php">Home</a></li>
+            <?php
+                if (!empty($_SESSION['username'])) {
+                    echo '<li><a href="../profile/index.php">Profile</a></li>';
+                } else {
+                    echo '<li><a href="../login/index.php">Login</a></li>';
+                }
+            ?>
+            <li><a href="../webbrapport/index.php">Webbrapport</a></li>
+        </ul>
+    </nav>
+</header>

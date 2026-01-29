@@ -8,7 +8,7 @@
     <section>
         <article>
             <h2>Homepage</h2>
-            <p>Countdown till dejten</p>
+            <p>Countdown to date</p>
         </article>
     </section>
 </body>
