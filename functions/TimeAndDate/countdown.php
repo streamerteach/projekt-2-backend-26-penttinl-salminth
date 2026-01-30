@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 $time = "";
 
 if (!empty($_POST["date"]) && !empty($_POST["time"])) {

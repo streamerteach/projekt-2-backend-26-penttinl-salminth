@@ -17,6 +17,6 @@ if ($month % 10 == 1 && $month != 11) {
     echo "th";
 }
 
-echo ", it is week $week.";
+echo ", week $week!";
 
 ?>
