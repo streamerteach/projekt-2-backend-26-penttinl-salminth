@@ -43,17 +43,37 @@ if (isset($_POST['upload']) && isset($_FILES['profile_image'])) {
 }
 
 
+// alla bilder som användaren har laddat upp
 $userImages = glob($uploadDir . $username . "_*.*");
 
 if (!empty($userImages)) {
-    echo "<div style='float:right; max-width:300px;'>";
-    echo "<h3>Your uploaded pictures:</h3>";
-    foreach ($userImages as $img) {
-        $browserPath = "../profile/uploads/" . basename($img);
-        echo "<img src='$browserPath' alt='Profile image' style='width:100%; margin-bottom:10px; border-radius:8px;'>";
+
+    //sorterar bilderna så att nyaste är först
+    usort($userImages, function($a, $b) {
+        return filemtime($b) - filemtime($a);
+    });
+
+    //första bilden är den nyaste
+    $newestImage = $userImages[0];
+    $newestPath = "../profile/uploads/" . basename($newestImage);
+
+    echo "<h3>Current profile picture:</h3>";
+    echo "<img src='$newestPath' width='200'>";
+
+    //äldre bilder visas i en utfällbar meny
+    echo "<details>";
+    echo "<summary>Show previous profile pictures</summary>";
+
+    //loopa igenom alla bilder förutom den första
+    $olderImages = array_slice($userImages, 1);
+
+    foreach ($olderImages as $oldImage) {
+        $oldPath = "../profile/uploads/" . basename($oldImage);
+        echo "<img src='$oldPath' width='150' style='display:block; margin:5px 0;'>";
     }
-    echo "</div>";
+
+    echo "</details>";
+
 } else {
     echo "<p>No profile pictures uploaded yet.</p>";
 }
-?>
