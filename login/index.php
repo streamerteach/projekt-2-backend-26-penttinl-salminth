@@ -6,18 +6,18 @@
     <?php include "../essentials/nav.php"; ?>
     <section>
         <article>
-            <h2>Min dejting sajt</h2>
-            <p>Logga in eller registrera dig här</p>
+            <h2>Better than Tinder!</h2>
+            <p><b>Sign up or log in</b></p>
         </article>
         <article>
-            <h2>Registreringsformulär</h2>
+            <h2>Registration Form</h2>
         <form action="./index.php" method="POST">
-            Användarnamn:<br> <input type="text" name="username"><br>
+            Username:<br> <input type="text" name="username"><br>
             E-mail:<br> <input type="email" name="email"><br>
-            Lösenord:<br> <input type="password" name="password"><br>
-            <input type="submit" value="Registrera dig">
+            Password:<br> <input type="password" name="password"><br>
+            <input type="submit" name="register" value="Register">
         </form>
-            <p>Har du redan ett konto?<a href="./index.php?form=login">Logga in här</a></p>
+            <p>If you already have an account: <a href="./index.php?form=login">Log in here</a></p>
             <?php include "../functions/loginformular.php"?>
         </article>
     </section>

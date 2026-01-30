@@ -4,11 +4,29 @@
 <body>
 <div id="container"> <!--Max bredd 800px -->
     <?php include "../essentials/nav.php"; ?>
-    <section>
+    <section style="display: flex; justify-content: space-between;">
+    <div style="flex: 1;">
         <article>
-            <h1>My profile </h1>
-            <p>Du kan lägga upp en profilbild här</p>
+            <h1>My profile</h1>
+            <p>You can upload a profile picture here</p>
         </article>
+
+        <div class="imageupload">
+            <form action="./index.php" method="post" enctype="multipart/form-data">
+                Select image to upload:<br>
+                <input type="file" name="profile_image" id="fileToUpload" accept="image/*"><br>
+                <input type="submit" value="Upload Image" name="upload">
+            </form>
+        </div>
+    </div>
+
+    <div style="flex: 1;">
+        <?php include "../functions/profilbild.php"; ?>
+    </div>
+    
+</section>
+
+    <section>
         <article>
             <?php include "../functions/TimeAndDate/tiden.php"; ?>
         </article>
