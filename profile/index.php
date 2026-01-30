@@ -7,7 +7,8 @@
     <section>
         <article>
             <h1>My profile </h1>
-            <p>Du kan lägga upp en profilbild här</p>
+            <p>Upload a profile picture here:</p>
+            <!-- profile picture comes here -->
         </article>
         <article>
             <?php include "../functions/TimeAndDate/tiden.php"; ?>
