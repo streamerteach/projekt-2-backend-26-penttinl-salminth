@@ -9,6 +9,8 @@ if (isset($_GET["accept"])) {
 if (isset($_GET["decline"])) {
     setcookie("accept_cookies", "decline", time() + (86400 * 30), "/");
        header("Location: ../../landingpage.php");
+       exit;
+
 }
 
 

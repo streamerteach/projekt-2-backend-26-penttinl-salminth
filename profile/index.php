@@ -6,7 +6,7 @@
     <?php include "../essentials/nav.php"; ?>
     <section>
         <article>
-            <h1>Min dejting sajt</h1>
+            <h1>My profile </h1>
             <p>Du kan lägga upp en profilbild här</p>
         </article>
         <article>

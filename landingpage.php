@@ -55,11 +55,11 @@ $firstVisit = $firstVisit ?? null;
             <section id="cookies">
                 <p>We use cookies!</p>
                     <div id="cookie-buttons">
-                        <!-- dehä funkar int ennu, säger att de e bara en länk fixas senare ork int nu mer -->
-                        <a href="?godkänn=true"><button>Accept Cookies</button></a>
-                        <a href="?vägra=true"><button>Decline Cookies</button></a>
+                       <a href="./functions/cookies/godkänn.php?accept=true"><button>Accept Cookies</button></a>
+                        <a href="./functions/cookies/godkänn.php?decline=true"><button>Decline Cookies</button></a>
                     </div>
             </section>
+            
 
         </div>
     </body>
