@@ -7,9 +7,12 @@
      <?php include "../essentials/nav.php"; ?>
     <section>
         <article>
-            <h2>Homepage</h2>
-            <p>Countdown to date</p>
+            <h1>Homepage</h1>
         </article>
+    </section>
+
+    <section id="guestbook">
+        <?php include "../functions/gastbok/gastbok.php"; ?>
     </section>
 </body>
 </html>
