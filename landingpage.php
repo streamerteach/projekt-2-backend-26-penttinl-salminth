@@ -29,7 +29,7 @@ $firstVisit = $firstVisit ?? null;
             </header>
             <section>
                 <article>
-                    <h1>Welcome to the Date Bait!</h1>
+                    <h1>Welcome to Date Bait!</h1>
                         <?php if ($returningUser && $firstVisit): ?>
                         <p>
                         Welcome back,
