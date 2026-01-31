@@ -1,6 +1,6 @@
 <?php
 
-// Log the visit
+
 if (isset($_SESSION['username'])) {
     $logFile = __DIR__ . '/../essentials/visit_log.txt';
     $username = $_SESSION['username'];
@@ -9,7 +9,7 @@ if (isset($_SESSION['username'])) {
     file_put_contents($logFile, $entry, FILE_APPEND);
 }
 
-// Display the visit list
+
 $logFile = __DIR__ . '/../essentials/visit_log.txt';
 
 if (file_exists($logFile)) {

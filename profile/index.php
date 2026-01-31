@@ -1,12 +1,8 @@
 <?php include "../essentials/handy_methods.php"; ?>
 <?php include "../essentials/header.php"; ?>
 <?php
-    if (! isset($_SESSION['last_visit'])) {
-    $_SESSION['last_visit'] = date('Y-m-d H:i:s');
-    } else {
-    // Update last visit to the current time
-    $_SESSION['last_visit'] = date('Y-m-d H:i:s');
-    }
+    $previousVisit          = $_SESSION['last_visit'] ?? null;
+    $_SESSION['last_visit'] = date('d-m-Y H:i:s');
 ?>
 <script src="../countdown.js"></script>
 <body>
@@ -16,10 +12,14 @@
     <div style="flex: 1;">
         <article>
             <h1>My profile</h1>
-            <div class="profile-info">
-                <p><strong>User:</strong> <?php echo $_SESSION['username']; ?></p>
-                <p><strong>Last visit:</strong> <?php echo $_SESSION['last_visit']; ?></p>
-            </div>
+           <div class="profile-info">
+                    <p><strong>User:</strong> <?php echo $_SESSION['username']; ?>
+                </p>
+                    <p><strong>Last visit:</strong>
+                    <?php echo $previousVisit ? $previousVisit : "This is your first visit"; ?>
+                </p>
+</div>
+
             <p>You can upload a profile picture here</p>
         </article>
 
