@@ -1,17 +1,17 @@
 <?php
 //veckodag, dag av månaden, och veckan! 
 $day = date("l");
-$month = date("j");
-$week = date("w");
+$dayOfMonth = date("j");
+$week = (int) date("W");
 
-echo "Today is $day the $month";
+echo "Today is $day the $dayOfMonth";
 
 //lite hifistelyä med datumendelser
-if ($month % 10 == 1 && $month != 11) {
+if ($dayOfMonth % 10 == 1 && $dayOfMonth != 11) {
     echo "st";
-} elseif ($month % 10 == 2 && $month != 12) {
+} elseif ($dayOfMonth % 10 == 2 && $dayOfMonth != 12) {
     echo "nd";
-} elseif ($month % 10 == 3 && $month != 13) {
+} elseif ($dayOfMonth % 10 == 3 && $dayOfMonth != 13) {
     echo "rd";
 } else {
     echo "th";
