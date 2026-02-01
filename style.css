@@ -37,3 +37,87 @@ header {
 .navbar li:hover {
     background-color: #ff99cc;
 }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+
+#container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+
+section {
+    margin-bottom: 30px;
+}
+
+article {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+
+h1, h2 {
+    margin-top: 0;
+}
+
+
+form {
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"],
+button {
+    padding: 8px 15px;
+    background-color: pink;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+a {
+    color: #cc0066;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+.imageupload,
+#cookies {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+#cookies {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#cookie-buttons button {
+    margin: 5px;
+}
