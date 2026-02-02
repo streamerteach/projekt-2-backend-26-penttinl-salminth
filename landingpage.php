@@ -48,7 +48,16 @@ $firstVisit = $firstVisit ?? null;
                         <p>
                             <strong>Server Info:</strong> <?= htmlspecialchars($serverInfo) ?><br>
                             <strong>PHP Version:</strong> <?= htmlspecialchars($phpVersion) ?><br>
-                            <strong>Cookie Consent:</strong> <?= $cookieConsent ? "Accepted" : "Not set" ?>
+                            <strong>Cookie Consent:</strong>
+                            <?php
+                                if ($cookieConsent === "accept") {
+                                    echo "Accepted";
+                                } elseif ($cookieConsent === "decline") {
+                                    echo "Declined";
+                                } else {
+                                    echo "Not set";
+                                }
+                            ?>
                         </p>
                 </article>
             </section>

@@ -4,7 +4,7 @@
     $previousVisit          = $_SESSION['last_visit'] ?? null;
     $_SESSION['last_visit'] = date('d-m-Y H:i:s');
 ?>
-<script src="../countdown.js"></script>
+
 <body>
 <div id="container"> <!--Max bredd 800px -->
     <?php include "../essentials/nav.php"; ?>
@@ -48,11 +48,13 @@
     <section id="datebooking">
         <h2>Put in the date and time for your date and see how much time there is left!</h2>
         <?php include "../functions/TimeAndDate/countdown.php"; ?>
+        <button type="button" id="resetCountdown">Restart</button>
         <!-- ska modifiera timern ennu så att insatta datumet och tiden sparas, och endast resettas av en "reset" knapp -->
 
     </section>
     <section>
     <?php include "../functions/visitcounter.php"; ?>
     </section>
+    <script src="../countdown.js"></script>
 </body>
 </html>
