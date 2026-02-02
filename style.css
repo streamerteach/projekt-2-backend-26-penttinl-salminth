@@ -52,6 +52,32 @@ body {
     padding: 10px;
 }
 
+#container nav {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+#container nav a li {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#container nav li {
+    background-color: pink;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#container nav li:hover {
+    background-color: #ff99cc;
+}
+
 
 section {
     margin-bottom: 30px;
@@ -120,4 +146,22 @@ a:hover {
 
 #cookie-buttons button {
     margin: 5px;
+}
+
+#penttinl {
+    background-color: #ffebf0;
+    padding: 10px;
+    border-left: 5px solid #ff99cc;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    line-height: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#mockupbild {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
 }
