@@ -9,7 +9,7 @@ ini_set('display_errors', '1');
 //starta session för varje användare
 session_start(); 
 
-//Function för input sanitation
+//function för input sanitation
 function test_input($data)
 {
     $data = trim($data);
@@ -17,5 +17,18 @@ function test_input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
+
+//databaskonfiguration
+$servername = "localhost";
+include "lösenord.php";
+$dbname = "salminth";
+$username = "salminth";
+
+//skapar en instans av PDO klassen som vi kallar $conn
+$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+print("Connected to DataBase");
+
+?>
 
 
