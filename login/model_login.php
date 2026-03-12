@@ -1,5 +1,7 @@
 <?php
 
+$login_error = ""; //skapa en ny error message so sedan kan fyllas om login misslyckas
+
 // hantera login request: Verifiera inmatat lösenord med hash från DB
 if (!empty($_POST['password']) && !empty($_POST['username'])) {
 
@@ -28,10 +30,10 @@ if (!empty($_POST['password']) && !empty($_POST['username'])) {
             exit;
 
         } else {
-            echo "wrong password.";
+           $login_error = "Wrong username or password. Try again.";
         }
 
     } else {
-        echo "User not found.";
+        $login_error = "Wrong username or password. Try again.";
     }
 }

@@ -13,6 +13,16 @@
             <p><b>Log in to continue</b></p>
 
             <?php include "view_login.php"; ?>
+
+               <hr>
+
+                <p>
+                    Don't have an account?
+                    <a href="index.php?register=1">Register here!</a>
+                </p>
+
+            <?php include "view_register.php"; ?>
+
         </article>
     </section>
 </div>

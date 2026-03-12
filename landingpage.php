@@ -87,7 +87,7 @@
 
     echo "<p><strong>Username:</strong> " . htmlspecialchars($row['username']) . "</p>";
 
-    echo "<p><strong>City:</strong> " . htmlspecialchars($row['city']) . "</p>";
+    echo "<p><strong>location:</strong> " . htmlspecialchars($row['location']) . "</p>";
 
     echo "<p><strong>Preference:</strong> " . htmlspecialchars($row['preference']) . "</p>";
 

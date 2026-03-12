@@ -14,11 +14,11 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
     echo "<p><strong>Username:</strong> " . htmlspecialchars($row['username']) . "</p>";
 
-    echo "<p><strong>City:</strong> " . htmlspecialchars($row['city']) . "</p>";
+    echo "<p><strong>location:</strong> " . htmlspecialchars($row['location']) . "</p>";
 
     echo "<p><strong>Preference:</strong> " . htmlspecialchars($row['preference']) . "</p>";
 
-    echo "<p><strong>About me:</strong><br>" . htmlspecialchars($row['bio']) . "</p>";
+    echo "<p><strong>Bio:</strong><br>" . htmlspecialchars($row['bio']) . "</p>";
 
     echo "<p><strong>Email:</strong> " . htmlspecialchars($row['email']) . "</p>";
 
