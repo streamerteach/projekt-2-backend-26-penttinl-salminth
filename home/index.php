@@ -11,6 +11,13 @@
         </article>
     </section>
 
+    <section id="annonser">
+        <h2>Dating Profiles</h2>
+
+        <?php include  "../functions/show_profiles.php"; ?>
+
+    </section>
+
     <section id="guestbook">
         <?php include "../functions/gastbok/gastbok.php"; ?>
     </section>

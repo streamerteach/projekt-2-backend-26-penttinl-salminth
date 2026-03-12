@@ -165,3 +165,11 @@ a:hover {
     max-width: 100%;
     text-align: center;
 }
+
+.profiler{
+border:1px solid #ccc;
+padding:15px;
+margin:15px 0;
+background:#f8f8f8;
+border-radius:6px;
+}
