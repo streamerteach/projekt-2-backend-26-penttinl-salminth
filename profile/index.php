@@ -60,6 +60,29 @@ include "delete_profile.php";
         <?php include "../functions/visitcounter.php"; ?>
     </section>
 
+    <h2>Mina kommentarer</h2>
+<?php
+$my_user = $_SESSION['username'];
+$sql = "SELECT * FROM comments WHERE receiver_username = ? ORDER BY created_at DESC";
+$stmt = $conn->prepare($sql);
+$stmt->execute([$my_user]);
+
+while ($c = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    echo "<div class='received-comment' style='background:#f9f9f9; padding:10px; margin-bottom:15px; border-left:5px solid #ccc;'>";
+        echo "<strong>" . htmlspecialchars($c['sender_username']) . "</strong> skrev:";
+        echo "<p>" . htmlspecialchars($c['comment_text']) . "</p>";
+        echo "<small>" . $c['created_at'] . "</small>";
+
+        // SVARSFORMULÄR (Svaret skickas till den som skrev till dig)
+        echo "<form action='../functions/post_comment.php' method='POST' style='margin-top:10px;'>";
+            echo "<input type='hidden' name='receiver' value='" . $c['sender_username'] . "'>";
+            echo "<textarea name='comment' placeholder='Svara " . $c['sender_username'] . "...' required style='width:100%;'></textarea>";
+            echo "<button type='submit' style='background:#4CAF50; color:white;'>Skicka svar</button>";
+        echo "</form>";
+    echo "</div>";
+}
+?>
+
     <!-- profil uppdateringen -->
     <section class="profiler">
         <h2>Update your profile</h2>
