@@ -1,4 +1,4 @@
-console.log("JavaScript-filen har laddats!");
+
 let currentPage = 1;
 let isFetching = false;
 let hasMore = true;

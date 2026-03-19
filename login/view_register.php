@@ -24,7 +24,8 @@
     <option value="2">Woman</option>
     <option value="3">Both</option>
     <option value="4">Other</option>
-    <option value="5">All</option>
+    <option value="5">Salary</option>
+    <option value="6">Likes</option>
     </select>
 
     <input type="submit" value="Register"> <!-- knapp för att skicka formuläret iväg -->

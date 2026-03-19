@@ -15,11 +15,16 @@
     <h2>Dating Profiles</h2>
 
     <div id="filter-section" style="margin-bottom: 20px; padding: 10px; background: #f4f4f4;">
-        <label>Preferens:
+        <label>Preference:
             <select id="pref-filter">
-                <option value="all">Alla</option>
-                <option value="1">Preferens 1</option> 
-                <option value="2">Preferens 2</option>
+                <option value="all">All</option>
+                <option value="1">Man</option> 
+                <option value="2">Woman</option>
+                <option value="3">Both</option>
+                <option value="4">Other</option>
+                <option value="5">Salary</option>
+                <option value="6">Likes</option>
+               
             </select>
         </label>
         
