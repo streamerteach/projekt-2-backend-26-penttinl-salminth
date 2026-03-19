@@ -32,6 +32,6 @@
 
 </form>
 
-<?
-//hanterar uppdateringen av profilen när formuläret skickas
-php include "update_profile.php"; ?>
+
+<!--hanterar uppdateringen av profilen när formuläret skickas-->
+<?php include "update_profile.php"; ?>
