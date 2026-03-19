@@ -1,4 +1,8 @@
-<?php include "../essentials/handy_methods.php"; ?>
+<?php include "../essentials/handy_methods.php"; 
+
+//inkludera raderingslogiken
+include "delete_profile.php";
+?>
 
     <?php
         //check if user is logged in

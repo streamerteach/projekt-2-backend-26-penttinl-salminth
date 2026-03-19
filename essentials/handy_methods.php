@@ -27,8 +27,8 @@ $username = "salminth";
 //skapar en instans av PDO klassen som vi kallar $conn
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-print("Connected to DataBase");
 
-?>
+
+
 
 
