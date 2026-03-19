@@ -61,5 +61,36 @@ const observer = new IntersectionObserver((entries) => {
     rootMargin: '100px'
 });
 
-// observer
+
 observer.observe(loader);
+
+
+async function toggleLike(profileId) {
+    try {
+        const response = await fetch('../functions/toggle_like.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `profile_id=${profileId}`
+        });
+
+        const result = await response.text();
+
+        const likesSpan = document.getElementById(`likes-${profileId}`);
+        const btn = document.getElementById(`btn-${profileId}`);
+
+        let currentLikes = parseInt(likesSpan.innerText);
+
+        if (result === "liked") {
+            likesSpan.innerText = currentLikes + 1;
+            btn.innerText = "Unlike";
+        } else if (result === "unliked") {
+            likesSpan.innerText = currentLikes - 1;
+            btn.innerText = "Like";
+        }
+
+    } catch (error) {
+        console.error("Like error:", error);
+    }
+}

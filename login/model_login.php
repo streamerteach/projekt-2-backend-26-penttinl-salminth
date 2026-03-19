@@ -3,12 +3,12 @@
 $login_error = ""; //skapa en ny error message so sedan kan fyllas om login misslyckas
 
 // hantera login request: Verifiera inmatat lösenord med hash från DB
-if (!empty($_POST['password']) && !empty($_POST['username'])) {
+if (! empty($_POST['password']) && ! empty($_POST['username'])) {
 
     $username = test_input($_POST['username']); //användarnamn validation
 
     //hämta sparade hashen från databasen
-    $sql = "SELECT * FROM Profiles WHERE username = ?";
+    $sql    = "SELECT * FROM Profiles WHERE username = ?";
     $result = $conn->prepare($sql);
     $result->execute([$username]);
 
@@ -24,13 +24,14 @@ if (!empty($_POST['password']) && !empty($_POST['username'])) {
         //matchar lösenordet med hashet
         if (password_verify($_POST['password'], $hashed_password)) {
 
-            $_SESSION['username'] = $row['username']; //spara användarnam i sessionen för att logga in användaren
+            $_SESSION['user_id']  = $row['id'];
+            $_SESSION['username'] = $row['username'];
 
             header("Location: ../profile/index.php"); //till profilsidan
             exit;
 
         } else {
-           $login_error = "Wrong username or password. Try again.";
+            $login_error = "Wrong username or password. Try again.";
         }
 
     } else {
