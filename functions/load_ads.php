@@ -1,5 +1,5 @@
 <?php
-require_once "../essentials/handy_methods.php";
+include "../essentials/handy_methods.php";
 
 // Kolla vilken sida och filter vi är på
 $page   = isset($_GET['page']) ? (int) $_GET['page'] : 1;
@@ -42,7 +42,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
     $liked = false;
 
-    
     if (isset($_SESSION['user_id'])) {
         $check = $conn->prepare("SELECT 1 FROM likes WHERE user_id = :uid AND profile_id = :pid");
         $check->execute([
@@ -64,15 +63,44 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo "<p><strong>Email:</strong> " . htmlspecialchars($row['email']) . "</p>";
     echo "<p><strong>Salary:</strong> " . htmlspecialchars($row['salary']) . "</p>";
 
-    
     echo "<p><strong>Likes:</strong> <span id='likes-" . $row['id'] . "'>" . $row['likes'] . "</span></p>";
 
-    
     if (isset($_SESSION['user_id'])) {
         $btnText = $liked ? "Unlike" : "Like";
         echo "<button onclick='toggleLike(" . $row['id'] . ")' id='btn-" . $row['id'] . "'>$btnText</button>";
     }
 
-    echo "</div>";
+    // Kommentarer
+    if (isset($_SESSION['username'])) {
+        echo "<div class='comment-box' style='margin-top:15px; border-top:1px solid #ddd; padding-top:10px;'>";
+        echo "<form action='../functions/post_comment.php' method='POST'>";
+        // Vi skickar med profilens username som 'receiver'
+        echo "<input type='hidden' name='receiver' value='" . htmlspecialchars($row['username']) . "'>";
+        echo "<textarea name='comment' placeholder='Skriv en hälsning till " . htmlspecialchars($row['username']) . "...' required style='width:100%; margin-bottom:5px;'></textarea><br>";
+        echo "<button type='submit'>Skicka kommentar</button>";
+        echo "</form>";
+        echo "</div>";
+    }
+    
+    if (isset($_SESSION['role'])) {
+        echo "<div class='admin-controls' style='margin-top:15px; padding:10px; background:#fff5f5; border-top:2px solid #ff0000;'>";
+        echo "<small><strong>Moderering:</strong></small><br>";
+
+        // Admin och manager ska kunna editera profiler
+        if ($_SESSION['role'] == 'manager' || $_SESSION['role'] == 'admin') {
+            echo "<a href='../home/edit_user.php?id=" . $row['id'] . "' style='color:blue; margin-right:15px;'>Redigera Profil</a>";
+        }
+
+        // Admin eller manager ska kunna ta bort profiler
+        if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'manager') {
+            echo "<a href='../functions/delete_profile_admin.php?id=" . $row['id'] . "' 
+                   onclick='return confirm(\"VARNING: Vill du verkligen radera hela denna profil permanent?\")' 
+                   style='color:red; font-weight:bold;'>RADERA PROFIL</a>";
+        }
+        
+        echo "</div>";
+    }
+
+    echo "</div>"; // Detta är slutet på profiler-diven
 }
 

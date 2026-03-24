@@ -26,6 +26,7 @@ if (! empty($_POST['password']) && ! empty($_POST['username'])) {
 
             $_SESSION['user_id']  = $row['id'];
             $_SESSION['username'] = $row['username'];
+            $_SESSION['role']     = $row['role']; // Används för att veta om det är admin eller vanlig användare
 
             header("Location: ../profile/index.php"); //till profilsidan
             exit;
