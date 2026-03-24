@@ -23,7 +23,7 @@ $stmt->execute([
 
 if ($stmt->rowCount() > 0) {
 
-    // 🔴 UNLIKE
+    // UNLIKE
     $conn->prepare("DELETE FROM likes WHERE user_id = :user_id AND profile_id = :profile_id")
         ->execute([
             ':user_id' => $user_id,
@@ -38,7 +38,7 @@ if ($stmt->rowCount() > 0) {
 
 } else {
 
-    // 🟢 LIKE
+    // LIKE
     $conn->prepare("INSERT INTO likes (user_id, profile_id) VALUES (:user_id, :profile_id)")
         ->execute([
             ':user_id' => $user_id,

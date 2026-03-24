@@ -68,12 +68,19 @@ $stmt = $conn->prepare($sql);
 $stmt->execute([$my_user]);
 
 while ($c = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    echo "<div class='received-comment' style='background:#f9f9f9; padding:10px; margin-bottom:15px; border-left:5px solid #ccc;'>";
+    echo "<div class='received-comment' style='background:#f9f9f9; padding:10px; margin-bottom:15px; border-left:5px solid #ccc; position: relative;'>";
         echo "<strong>" . htmlspecialchars($c['sender_username']) . "</strong> skrev:";
         echo "<p>" . htmlspecialchars($c['comment_text']) . "</p>";
         echo "<small>" . $c['created_at'] . "</small>";
 
-        // SVARSFORMULÄR (Svaret skickas till den som skrev till dig)
+        // Radera knappen för admin och manager
+        if (isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'manager')) {
+            echo "<a href='../functions/delete_comment.php?id=" . $c['id'] . "' 
+                   onclick='return confirm(\"Är du säker på att du vill ta bort denna kommentar?\")' 
+                   style='color:red; text-decoration:none; margin-left:15px; font-weight:bold;'>[Radera]</a>";
+        }
+
+        // Svarsformulär (Svaret skickas till den som skrev till dig)
         echo "<form action='../functions/post_comment.php' method='POST' style='margin-top:10px;'>";
             echo "<input type='hidden' name='receiver' value='" . $c['sender_username'] . "'>";
             echo "<textarea name='comment' placeholder='Svara " . $c['sender_username'] . "...' required style='width:100%;'></textarea>";
